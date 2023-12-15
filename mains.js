@@ -1,4 +1,4 @@
-const form = document.getElementById('formulario');
+const form = document.getElementById('form');
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -6,15 +6,15 @@ form.addEventListener('submit', function(e){
     let valA = parseFloat(document.getElementById('valor-A').value);
     let valB = parseFloat(document.getElementById('valor-B').value);
 
-    const messagesuccess = 'Formulario enviado com sucesso!';
-    const containerMessageSuccess = document.querySelector('.success-message');
-    const containerMessageError = document.querySelector('.error-message');
+    const successmessage = 'Formulario enviado com sucesso!';
+    const containerMessageSuccess = document.querySelector('.successmessage');
+    const containerMessageError = document.querySelector('.errormessage');
 
     const formValid = numbervalid(valA, valB);
 
     if (formValid) {
         containerMessageError.style.display = 'none';
-        containerMessageSuccess.innerHTML = messagesucess;
+        containerMessageSuccess.innerHTML = successmessage;
         containerMessageSuccess.style.display =  'block';
 
     document.getElementById('valor-A').value = '';
